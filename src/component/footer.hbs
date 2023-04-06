@@ -1,0 +1,17 @@
+<footer>
+    <div>
+    <hr />
+    <br />
+    {{#each social}}
+    {{> link blank=true}}
+    {{/each}}
+    </div>
+        <br />
+    <div>
+        <em>@Copyright by {{header.fullname}} </em>
+    </div>
+    <br />
+    <div>
+        <address>{{header.adress}}</address>
+    </div>
+</footer>

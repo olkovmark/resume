@@ -1,0 +1,20 @@
+
+<div>
+      {{#with main}}
+  <main>
+    <section>
+    {{> title data=summary.title big=true}}
+      <div>
+        <p>{{summary.text}} </p>
+      </div>
+    </section> 
+    {{#with experience}}
+    <section>
+      {{> title data=title}}
+        <p>{{text}} </p>
+      </div>
+    </section>
+    {{/with}}
+  </main>
+    {{/with}}
+</div>
