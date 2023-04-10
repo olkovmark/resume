@@ -1,0 +1,166 @@
+<div class="main">
+    <div class="car_header">
+        <div class="model">
+            <h1>{{make}} {{model}} {{year}}
+                <em style="color: {{color}};">{{color}}</em>
+            </h1>
+        </div>
+        <div class="engine">
+            <div>
+                <h2>Engine</h2>
+                <div class="engine_info">
+                {{#with engine}}
+                    <p>Type: <b>{{type}}</b></p>
+                    <p>Displacement: <b>{{displacement}}</b></p>
+                    <p>Horsepower: <b>{{horsepower}}</b></p>
+                    <p>Torque: <b>{{torque}}</b></p>
+                    <p>Transmission: <b> {{transmission.gears}} {{transmission.type}}</b></p>
+                {{/with}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>  
+    <div class="info">
+            {{#with features}}
+            <section style="padding-left: 50px;">
+                    <h3>Interior</h3>
+                    <div style="padding-left: 50px;">
+                    <div>
+                    {{#with interior.seats}}
+                        <p>Seats: <b style="text-transform: uppercase;">{{material}} {{color}} 
+                            {{#if heated}}Heated{{/if}} 
+                            {{#if ventilated}}Ventilated{{/if}}</b></p>
+                    {{/with}}
+                    </div>
+                    <div>
+                    {{#with interior.dashboard}}
+                        <p>Dashboard: <b style="text-transform: uppercase;">{{material}} {{color}} 
+                            {{#if heated}}Heated{{/if}} 
+                            {{#if ventilated}}Ventilated{{/if}}</b></p>
+                            <div>
+                                {{#with display}}
+                                <p>Display: 
+                                    <b style="text-transform: uppercase;">
+                                        {{type}}({{size}}) {{resolution}}
+                                        {{#if touchscreen}}Touchscreen{{/if}}
+                                        </b></p>
+                                {{/with}}
+
+                            </div>
+                    {{/with}}
+                    </div>
+                    <div>
+                        {{#with interior.audio}}
+                        <p>Audio: <b style="text-transform: uppercase;">{{system}} Speakers:{{speakers}}
+                                {{#if subwoofer}}subwoofer{{/if}}
+                                {{#if bluetooth}}bluetooth{{/if}}
+                                {{#if USB}}USB{{/if}}
+                                </b></p>
+                        {{/with}}
+                    </div>
+                    </div>
+            </section>
+            <section style="padding-left: 50px;">
+                    <h3>Exterior</h3>
+                    <div style="padding-left: 50px;">
+                    <div>
+                    {{#with exterior.wheels}}
+                        <p>Wheels: <b style="text-transform: uppercase;">
+                            Size:{{size}} {{type}}
+                            <em style="color: {{color}};">{{color}}</em>
+                            </b></p>
+                    {{/with}}
+                    </div>
+                    <div>
+                    {{#with exterior.headlights}}
+                        <p>Headlights: <b style="text-transform: uppercase;">
+                            {{type}} {{brightness}}
+                            {{#if automatic}}automatic{{/if}}
+                            </b></p>
+                    {{/with}}
+                    </div>
+                    <div>
+                    {{#with exterior.sunroof}}
+                        <p>Sunroof: <b style="text-transform: uppercase;">
+                            {{type}} {{size}}
+                            {{#if automatic}}automatic{{/if}}
+                            </b></p>
+                    {{/with}}
+                    </div>
+                    </div>
+            </section>
+            <section style="padding-left: 50px;">
+                    <h3>Safety</h3>
+                    <div style="padding-left: 50px;">
+                    <div>
+                    {{#with safety.airbags}}
+                        <p>Airbags</p>
+                        <ul>
+                            <li><p>Front : <b>{{front}}</b></p></li>
+                            <li><p>Side : <b>{{side}}</b></p></li>
+                            <li><p>Knee : <b>{{knee}}</b></p></li>
+                            <li><p>Rear : <b>{{rear}}</b></p></li>
+                        </ul>
+                    {{/with}}
+                    </div>
+                    <div>
+                    {{#with safety.assistance}}
+                        <p>Assistance</p>
+                            <ul  style="text-transform: uppercase;">
+                            <li ><b>{{#if blind_spot_monitoring}}blind spot monitoring{{/if}}</b></li>
+                            <li ><b>{{#if rear_cross_traffic_alert}}rear cross traffic alert{{/if}}</b></li> 
+                            <li ><b>{{#if lane_departure_warning}}lane departure warning{{/if}}</b></li> 
+                            <li ><b>{{#if adaptive_cruise_control}}adaptive cruise control{{/if}}</b></li> 
+                            <li ><b>{{#if collision_warning}}collision warning{{/if}}</b></li> 
+                            </ul>
+                    {{/with}}
+                    </div>
+
+                    </div>
+            </section>
+            {{/with}}  
+    </div>
+<hr>
+            <h2>Price</h2>
+    <div class="price">
+    {{#with price}}
+            <p>Base: <b>{{base}}</b></p>
+            <p>Destination: <b>{{destination}}</b></p>
+             <h4>Options</h4>
+            <ul> 
+                <li><p>Navigation: <b>{{options.navigation}}</b></p></li>
+                <li><p>Moonroof: <b>{{options.moonroof}}</b></p></li>
+                <li><p>Premium paint: <b>{{options.premium_paint}}</b></p></li>
+            </ul>
+            <h3>Total: <b>{{total}}</b></h3>
+    {{/with}}
+    </div>
+</div>
+
+<style>
+    .main{
+        width: 100%;
+    }
+    .info
+    {
+        display: flex;
+        justify-content: space-around;
+
+    }
+    .car_header{
+        display: flex;
+        justify-content: space-around;
+    }
+    .engine{
+       
+    }
+    .engine_info{
+        display: flex;
+        column-gap: 20px;
+    }
+    .price  {
+
+    }
+    
+</style>
