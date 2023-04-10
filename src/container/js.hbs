@@ -1,0 +1,33 @@
+<div>
+    <h1>{{name}}</h1>
+    <p>{{description}}</p>
+<p>Founder: <b>{{history.founder}} ({{history.year}})</b></p>
+<p>Types: {{#each types}} <b>{{this}}</b>,{{/each}}</p>
+<div >
+    <h3>Syntax</h3>
+    <div style="padding-left: 40px;">
+    <p>Variables:{{#each syntax.variables}} <b>{{this}}</b>,{{/each}}</p>
+    <p>Functions:{{#each syntax.functions}} <b>{{this}}</b>,{{/each}}</p>
+    <p>Conditionals:{{#each syntax.conditionals}} <b>{{this}}</b>,{{/each}}</p>
+    <p>Loops:{{#each syntax.loops}} <b>{{this}}</b>,{{/each}}</p>
+    </div>
+</div>
+<div >
+    <h3>Features</h3>
+    <ul>
+        {{#each features}}<li><b>{{this}}</b></li>{{/each}}
+    </ul>
+</div>
+<div style="padding: 20px 0;">
+    <p>Libraries:{{#each libraries}} <b>{{this}}</b>,{{/each}}</p>
+</div>
+<div style="padding: 20px 0;">
+    <p>Tools:{{#each tools}} <b>{{this}}</b>,{{/each}}</p>
+</div>
+<div>
+    <h3 >Community</h3>
+    <div style="padding-left: 40px; font-size: 20px;" >
+        {{#each community}} <a href="#" class="badge badge-primary">{{name}}({{type}})</a>{{/each}}
+    </div>
+</div>
+</div>
