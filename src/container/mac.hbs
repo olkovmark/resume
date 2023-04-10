@@ -1,0 +1,75 @@
+<div class="product">
+    <div class="product_header">
+        <h1>{{name}} {{price}}$</h1>
+        <p>{{description}}</p>
+        <em>{{category}}</em>
+    </div>
+    <hr>
+    <div class="product_info">
+        {{#with features}}
+            {{#with processor}}
+                <p>Processor: <b>
+                {{brand}} {{model}} {{speed}} 
+                {{cores}} {{cache}}
+                </b></p>
+            {{/with}}
+            {{#with memory}}
+                <p>Memory: <b>{{type}} {{size}} {{speed}} </b></p>
+            {{/with}}
+            {{#with storage}} <p>Storage: <b>{{type}} {{size}} </b></p>{{/with}}
+            {{#with display}}
+                <p>Display: <b>
+                    {{size}} {{resolution}} {{technology}}
+                    {{color_space}} {{brightness}} {{resolrefresh_rateution}}
+                </b></p>
+            {{/with}}
+            {{#with graphics}}<p>Graphics: <b>{{brand}} {{model}} {{memory}}</b></p>{{/with}}
+            <div class="ports info_list">
+                <p>Ports</p>
+                <ul>
+                    {{#each ports}}
+                        <li>
+                            <b>{{type}} ({{count}})</b>
+                            {{#if features}}
+                            <p>Features:{{#each features}} <b>{{this}}</b>,{{/each}}</p>
+                            {{/if}}
+                        </li>
+                    {{/each}}
+                </ul>
+            </div>
+            {{#with battery}} <p>Battery: <b>{{type}}, {{capacity}}, {{life}}</b></p>{{/with}}
+            <p>Weight: <b>{{weight}}</b></p>
+            <div class="info_list">
+            {{#with dimensions }}
+                <p>Dimensions</p>
+                <ul>
+                    <li><p>Height: <b>{{height}}</b></p></li>
+                    <li><p>Width: <b>{{width}}</b></p></li>
+                    <li><p>Depth: <b>{{depth}}</b></p></li>
+                </ul>
+            </div>
+            {{/with}}
+            <p>Operating System: <b>{{operating_system}}</b></p>
+                <div class="info_list">
+                    <p>Accessories</p>
+                    <ul>
+                    {{#each accessories }}
+                    <li> <b>{{name}} ({{price}}$)</b></li>
+                    {{/each}}
+                    </ul>
+                </div>
+        {{/with}}
+    </div>
+</div>
+
+<style>
+    .info_list{
+        display: flex;
+
+    }
+        .info_list  ul li{
+        margin: 0;
+        padding: 0;
+
+    }
+</style>
