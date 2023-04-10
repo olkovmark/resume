@@ -1,0 +1,45 @@
+<div>
+    <h1>{{name}}</h1>
+    <ul>
+    {{#each users}}
+    <li>
+        <section>
+            <h2>{{> persona data = this}}</h2>
+            <p>Friends</p>
+            <ul>
+                {{#each friends}}
+                <li>
+                    {{> persona data = this}}
+                    <p>Mutual friends</p>
+                    <ul>
+                    {{#each mutual_friends}}
+                       <li>{{> persona data = this}}</li>
+                    {{/each}}
+                    </ul>
+                </li>
+                {{/each}}
+            </ul>
+            {{#if groups}}
+            <p>Groups</p>
+            <ul>
+                {{#each groups}}
+                <li>
+                    <b>{{id}}: {{name}} <br>{{description}}</b>
+                    <p>Members</p>
+                    <ul>
+                        {{#each members}}
+                        <li>{{> persona data = this}}</li>
+                        {{/each}}
+                    </ul>
+                </li>
+                {{/each}}
+            </ul>
+            {{/if}}
+        </section>
+    </li>
+    <hr>
+    {{/each}}
+    </ul>
+</div>
+
+
