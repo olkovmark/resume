@@ -952,7 +952,7 @@ router.get('/facebook', function (req, res) {
 })
 
 router.get('/bootstrap', function (req, res) {
-  res.render('bootstrap', {
+  res.render('basic', {
     layout: 'bootstrap',
     main: {},
   })
@@ -960,6 +960,7 @@ router.get('/bootstrap', function (req, res) {
 
 router.get('/task21', function (req, res) {
   res.render('task21', {
+    layout: "basic",
     heading: {
       main: {
         title: 'JavaScript',
@@ -1023,10 +1024,9 @@ router.get('/task21', function (req, res) {
 })
 
 router.get('/task22', function (req, res) {
-  // res.render генерує нам HTML сторінку
 
-  //            ↙ cюди вводимо назву файлу з сontainer
   res.render('task22', {
+    layout: 'basic',
     page_header: {
       title: 'InnovaMind',
       description: 'Welcome to our wonderful community',
