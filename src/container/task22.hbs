@@ -1,0 +1,61 @@
+<div>
+  <h1 class='text-center'>{{page_header.title}}</h1>
+  <p
+    class='text-uppercase text-center'
+  >{{page_header.description}}</p>
+  <section class='card'>
+    <div class='card-body'>
+      {{#with section.about_us}}
+        <div
+          class='display-6 text-end'
+        >{{title_list.main}}</div>
+        <h2 class='text-end'>{{title_list.sub}}</h2>
+        <button
+          class='btn-outline-info btn'
+        >{{button.text}}</button>
+      {{/with}}
+    </div>
+
+  </section>
+  <br />
+  <section class='card'>
+    <div class='card-body'>
+      {{#with section.advantage}}
+        <div class='display-5 text-muted'>{{title}}</div>
+            {{> cardInfo data=efficiency }}
+        <br />
+             {{> cardInfo data=innovation position="text-center"}}
+        <br />
+            {{> cardInfo data=collaboration position="text-end"}}
+        <br />
+      {{/with}}
+    </div>
+
+  </section>
+  <br>
+  <section class='card'>
+    <div class='card-body'>
+      <div class='display-5'>
+        {{section.agreement.title}}
+      </div>
+      <div class='card'>
+        <div class='card-body'>
+          {{#with section.agreement.info}}
+            <h5>{{sub_title}}</h5>
+            <br />
+            <div class='card'>
+              <div class='card-body'>
+                <p>{{detail.text}}</p>
+                <button
+                  class='btn btn-success'
+                >{{detail.button}}</button>
+
+              </div>
+            </div>
+          {{/with}}
+        </div>
+      </div>
+
+    </div>
+  </section>
+</div>
