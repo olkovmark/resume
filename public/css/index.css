@@ -11,14 +11,9 @@ ul,
 li {
   margin: 10px;
 }
-main,
-header,
-footer {
-  margin: 32px;
-}
 
 section {
-  padding: 16px;
+  /* padding: 16px; */
 }
 
 a {
