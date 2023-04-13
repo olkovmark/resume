@@ -1,0 +1,141 @@
+<div>
+
+  <header class='card mt-3'>
+    <div class='card-body d-flex justify-content-between'>
+      <h1 class='col-9'>{{navigation.Logo}}</h1>
+      <nav class='nav col-3'>
+        {{#each navigation.links}}
+          <a href={{href}} class='nav-link'>{{text}}</a>
+        {{/each}}
+      </nav>
+    </div>
+
+  </header>
+  
+  <section class='mt-5'>
+    <div class='display-5 text-center'>{{newsBlock.title}}
+
+    </div>
+
+    <div class='row g-2 mt-2'>
+      {{#each newsBlock.cards}}
+        <div class='col-3'>
+          <div class='card text-bg-dark'>
+            <div class='card-header'>
+              {{title}}
+              {{#if isNew}}
+                <span
+                  class='badge text-bg-success rounded-pill'
+                >New</span>
+              {{/if}}
+              {{#if isTop}}
+                <span
+                  class='badge text-bg-danger rounded-pill'
+                >Top</span>
+              {{/if}}
+            </div>
+            <p class='card-body'>{{description}}</p>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+
+  </section>
+
+  <hr class='my-5' />
+
+  <section class='row'>
+    <nav class='col-12 nav nav-tabs mb-3'>
+      {{#each goodsBlock.tabs}}
+
+        <a href='#' class='nav-link 
+        {{#if isActive}}active{{/if}}
+        {{#if isDisabled}}
+        text-succesery
+        disabled
+        {{/if}}
+        '>{{text}}</a>
+
+      {{/each}}
+    </nav>
+
+    {{#each goodsBlock.cards}}
+      <div class='col-4 g-4'>
+        <div class='card'>
+          <img src={{image}} alt='' class='card-top-img' />
+          <div class='card-body'>
+            <div class='card-title'>
+              {{title}}
+              {{#if isHot}}
+                <span
+                  class='badge text-bg-warning rounded-pill'
+                >HOT</span>
+              {{/if}}
+              {{#if isNew}}
+                <span
+                  class='badge text-bg-primary rounded-pill'
+                >NEW</span>
+              {{/if}}
+            </div>
+            <p>{{description}}</p>
+          </div>
+        </div>
+
+      </div>
+    {{/each}}
+  </section>
+
+  <hr class='my-5' />
+
+  <section class='alert text-bg-dark'>
+    {{#with subscribe}}
+      <h2>{{header}}</h2>
+      <div class='d-flex justify-content-between'>
+        <p>{{description}}</p>
+        <a
+          href={{buttons.0.link}}
+          class='btn btn-primary'
+        >{{buttons.0.text}}</a>
+      </div>
+      <a
+        href={{buttons.1.link}}
+        class='btn btn-primary'
+      >{{buttons.1.text}}</a>
+    {{/with}}
+  </section> 
+
+  <hr class='my-5' />
+
+  <section class='alert text-bg-success text-center'>
+    {{#with service}}
+      <h2 class=''>{{title}}</h2>
+      <p>{{description}}</p>
+      <a
+        href={{buttons.0.link}}
+        class='btn btn-primary'
+      >{{buttons.0.text}}</a>
+    {{/with}}
+  </section>
+
+
+  <hr class='my-5' />
+
+  <footer class='row'>
+    {{#each footer}}
+      <div class='col-2'>
+        {{#each this}}
+          <nav class='nav'>
+            <a class='nav-link
+
+            {{#if @last}} disabled{{/if}}
+            ' href={{link}}>{{text}}</a>
+
+          </nav>
+        {{/each}}
+      </div>
+
+    {{/each}}
+
+  </footer>
+
+</div>
