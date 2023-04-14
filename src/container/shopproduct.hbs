@@ -1,0 +1,127 @@
+<div class='mx-5'>
+  <nav class='breadcrumb my-4'>
+
+    {{#each breadcrumb}}
+      <div class='breadcrumb-item'>
+        {{#if url}}
+          <a href={{url}}>{{name}}</a>
+        {{else}}
+          <span>{{name}}</span>
+        {{/if}}
+      </div>
+    {{/each}}
+  </nav>
+
+  <section class='row g-4 my-5'>
+    {{#with productData}}
+      <div class='d-flex justify-content-between'>
+
+        <div class='col-6'>
+          <img class='col-12' src={{img}} />
+          <div class='card mt-5'>
+            <div class='card-body'>
+              <h3 class='card-title'>{{info.title}}</h3>
+              <p>{{info.about}}</p>
+              <h4>{{info.price}}</h4>
+              {{#each info.category}}
+
+                {{#if isHot}}
+                  <span
+                    class='badge text-bg-warning rounded-pill'
+                  >{{name}}</span>
+                {{/if}}
+                {{#if isNew}}
+                  <span
+                    class='badge text-bg-primary rounded-pill'
+                  >{{name}}</span>
+                {{/if}}
+                {{#if isBonus}}
+                  <span
+                    class='badge text-bg-info rounded-pill'
+                  >{{name}}</span>
+                {{/if}}
+              {{/each}}
+            </div>
+          </div>
+
+        </div>
+        <div class='col-5'>
+          <table class='table'>
+            <thead>
+              <tr>
+                {{#each item.head}}
+                  <th scope='col'>{{this}}</th>
+                {{/each}}
+              </tr>
+            </thead>
+            <tbody>
+              {{#each item.body}}
+                <tr>
+                  {{#each this}}
+                    <td scope='col'>{{this}}</td>
+                  {{/each}}
+                </tr>
+              {{/each}}
+
+            </tbody>
+          </table>
+          <div class='card'>
+            <div class='card-header'>{{param.title}}</div>
+            <div class='list-group'>
+              {{#each param.list}}
+                <div class='list-group-item'>{{this}}</div>
+              {{/each}}
+            </div>
+          </div>
+          {{#if alert.isError}}
+            <div
+              class='alert alert-danger mt-4'
+            >{{alert.text}}</div>
+          {{/if}}
+        </div>
+
+      </div>
+
+      <div>
+        <div class='card'>
+          <div class='card-body'>
+            {{#each actionList}}
+              <button
+              class='btn
+              {{#if isWarning}}
+               btn-warning
+               {{/if}}
+              {{#if isError}}
+               btn-outline-danger
+               {{/if}}
+              {{#if isSuccess}}
+               btn-success
+               {{/if}}
+              {{#if isGood}}
+               btn-outline-success
+               {{/if}}
+                mx-2'
+            >{{name}}</button>
+            {{/each}}
+          </div>
+        </div>
+      </div>
+    {{/with}}
+
+  </section>
+
+  <hr class='my-5' />
+
+  <section class='row my-5'>
+    <h2 class='text-center'>{{goodsOtherBlock.title}}</h2>
+    {{#each goodsOtherBlock.cards}}
+    <div class="col-4 my-4">
+     {{> shopcard card=this}}
+    </div>
+    {{/each}}
+  </section>
+  <hr class='my-5' />
+  {{> shopaction service=service}}
+
+  <hr class='my-5' />
+</div>
