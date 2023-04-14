@@ -8,22 +8,7 @@
     <div class='row g-2 mt-2'>
       {{#each newsBlock.cards}}
         <div class='col-3'>
-          <div class='card text-bg-dark'>
-            <div class='card-header'>
-              {{title}}
-              {{#if isNew}}
-                <span
-                  class='badge text-bg-success rounded-pill'
-                >New</span>
-              {{/if}}
-              {{#if isTop}}
-                <span
-                  class='badge text-bg-danger rounded-pill'
-                >Top</span>
-              {{/if}}
-            </div>
-            <p class='card-body'>{{description}}</p>
-          </div>
+       {{> shoppost card=this}}
         </div>
       {{/each}}
     </div>

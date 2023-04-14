@@ -1,0 +1,35 @@
+<div class='mx-5'>
+  {{>breadcrumb}}
+  <section class='row'>
+    <img
+      class='col-12 my-4'
+      src={{newsData.photo}}
+      alt=''
+    />
+    <div class='display-2'>{{newsData.head.heading}}</div>
+    <p>{{newsData.head.description}}</p>
+    {{#each newsData.body}}
+      <div class='mb-5 px-5'>
+        <h3 class='display-5'>{{title}}</h3>
+        <p>{{text}}</p>
+      </div>
+    {{/each}}
+  </section>
+
+  <hr class='my-5' />
+
+  <section class="row">
+    <h2 class='text-center mb-5'>{{newsOtherBlock.title}}</h2>
+    {{#each newsOtherBlock.cards}}
+    <div class="col-3">
+    {{> shoppost card=this}}
+    </div>
+    {{/each}}
+
+  </section>
+
+  <hr  class='my-5'/>
+  {{> shopaction service=service}}
+
+  <hr  class='my-5'/>
+</div>
