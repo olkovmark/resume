@@ -1,0 +1,21 @@
+<div class='card'>
+  {{#with card}}
+    <img src={{image}} alt='' class='card-top-img' />
+    <div class='card-body'>
+      <div class='card-title'>
+        {{title}}
+        {{#if isHot}}
+          <span
+            class='badge text-bg-warning rounded-pill'
+          >HOT</span>
+        {{/if}}
+        {{#if isNew}}
+          <span
+            class='badge text-bg-primary rounded-pill'
+          >NEW</span>
+        {{/if}}
+      </div>
+      <p>{{description}}</p>
+    </div>
+  {{/with}}
+</div>
