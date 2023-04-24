@@ -1,17 +1,6 @@
 <div class='mx-5'>
-  <nav class='breadcrumb my-4'>
 
-    {{#each breadcrumb}}
-      <div class='breadcrumb-item'>
-        {{#if url}}
-          <a href={{url}}>{{name}}</a>
-        {{else}}
-          <span>{{name}}</span>
-        {{/if}}
-      </div>
-    {{/each}}
-  </nav>
-
+{{> breadcrumb}}
   <section class='row g-4 my-5'>
     {{#with productData}}
       <div class='d-flex justify-content-between'>

@@ -1,0 +1,11 @@
+<nav class='breadcrumb my-4'>
+  {{#each breadcrumb}}
+    <div class='breadcrumb-item'>
+      {{#if url}}
+        <a href={{url}}>{{name}}</a>
+      {{else}}
+        <span>{{name}}</span>
+      {{/if}}
+    </div>
+  {{/each}}
+</nav>
