@@ -3,7 +3,7 @@
     <h1 class='col-9'>{{navigation.Logo}}</h1>
     <nav class='nav col-3'>
       {{#each navigation.links}}
-        <a href={{href}} class='nav-link'>{{text}}</a>
+        <a href={{#if href}}{{href}}{{else}}"#"{{/if}} class='nav-link'>{{text}}</a>
       {{/each}}
     </nav>
   </div>
