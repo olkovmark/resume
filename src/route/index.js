@@ -2,7 +2,33 @@ const express = require('express')
 const router = express.Router()
 
 router.get('/', function (req, res) {
-  res.render('index', {})
+  res.render('index', {
+    layout: 'index',
+    links: [
+      { link: '/skills', text: 'skills' },
+      { link: '/education', text: 'education' },
+      { link: '/works', text: 'works' },
+      { link: '/person', text: 'person' },
+      { link: '/bio', text: 'bio' },
+      { link: '/program', text: 'program' },
+      { link: '/web', text: 'web' },
+      { link: '/js', text: 'js' },
+      { link: '/car', text: 'car' },
+      { link: '/mac', text: 'mac' },
+      { link: '/facebook', text: 'facebook' },
+      { link: '/task21', text: 'task21' },
+      { link: '/task22', text: 'task22' },
+      { link: '/task31', text: 'task31' },
+      { link: '/shophome', text: 'shophome' },
+      { link: '/shopproduct', text: 'shopproduct' },
+      { link: '/shopnews', text: 'shopnews' },
+      { link: '/shoporder', text: 'shoporder' },
+      { link: '/shopcart', text: 'shopcart' },
+      { link: '/shopprofile', text: 'shopprofile' },
+      { link: '/shopreview', text: 'shopreview' },
+      { link: '/shopcatalog', text: 'shopcatalog' },
+    ],
+  })
 })
 
 const fullname = 'Mark Olkov'
@@ -2627,6 +2653,7 @@ router.get('/shopcart', function (req, res) {
     ],
   })
 })
+
 router.get('/shopprofile', function (req, res) {
   res.render('shopprofile', {
     layout: 'shop',
@@ -2914,7 +2941,6 @@ router.get('/shopprofile', function (req, res) {
   })
 })
 
-
 router.get('/shopreview', function (req, res) {
   res.render('shopreview', {
     layout: 'shop',
@@ -3090,7 +3116,6 @@ router.get('/shopreview', function (req, res) {
       },
     ],
 
-
     service: {
       title: 'Our Services',
       description:
@@ -3198,10 +3223,8 @@ router.get('/shopreview', function (req, res) {
   })
 })
 
-
 router.get('/shopcatalog', function (req, res) {
   res.render('shopcatalog', {
-
     layout: 'shop',
     navigation: {
       links: [
