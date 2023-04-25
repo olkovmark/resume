@@ -1,0 +1,103 @@
+<section class='row gx-5'>
+  {{#with formBlock}}
+    <div class='col-8'>
+
+      <div class='mb-4'>
+        <h1>{{header}}</h1>
+        <span>{{rating.title}}:{{rating.value}}</span>
+      </div>
+
+      <nav class='nav nav-tabs mb-3 row'>
+        {{#each actionBlock.tabs}}
+          <a
+            href="#"
+            class='nav-link 
+             {{#if isActive}}active{{/if}}
+            col-4'
+          >{{text}}</a>
+        {{/each}}
+      </nav>
+
+      <hr class='my-5 border-2 opacity-50' />
+
+      <div class='card card-body'>
+        <span
+          class='card-title'
+        >{{actionBlock.report.title}}</span>
+        <div>
+          <a
+            href={{actionBlock.report.button.link}}
+            class='btn btn-secondary'
+          >{{actionBlock.report.button.text}}</a>
+        </div>
+      </div>
+
+      <hr class='my-5 border-2 opacity-50' />
+
+      <div>
+        <h2>{{feedbackBlock.title}}</h2>
+        <div class='my-5'>
+          {{#each feedbackBlock.buttons}}
+            <a
+              href={{link}}
+                    class='btn mx-2
+                    {{#if isSuccess}}btn-success{{/if}}
+                    {{#if isWarning}}btn-warning{{/if}}
+                    {{#if isDanger}}btn-danger{{/if}}'
+            >{{text}}</a>
+          {{/each}}
+        </div>
+      </div>
+
+    </div>
+
+    <div class='col-4'>
+      {{#with goodsInfo}}
+        <div class='card card-body mb-3'>
+          <div>
+            <img src={{photo}} alt='' />
+          </div>
+          <span class='mt-5'>{{name}}</span>
+        </div>
+        <div class='card card-body mb-3'>
+
+          <h4>{{price}}</h4>
+          {{#if inMarket}}
+            <span>Є в наявності</span>
+          {{/if}}
+
+          <div class='my-3'>
+            <a
+              href=''
+              class='btn btn-primary'
+            >{{buttons.0.text}}</a>
+          </div>
+          <div>
+            <a
+              href=''
+              class='btn btn-secondary'
+            >{{buttons.1.text}}</a>
+          </div>
+
+        </div>
+        <div class='card card-body'>
+          <div>
+            <span>{{seller.title}}</span>:
+            <b>{{seller.value}}</b>
+          </div>
+        </div>
+      {{/with}}
+    </div>
+  {{/with}}
+</section>
+
+<hr class='my-5 border-2 opacity-50' />
+
+<div>
+  {{#each reviewList}}
+    {{> reviewItem}}
+  {{/each}}
+</div>
+
+{{> shopaction}}
+
