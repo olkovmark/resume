@@ -1,0 +1,52 @@
+<section class='card card-body my-3'>
+  <div class='card'>
+
+    <div class='card-header'>
+      <h3>{{title.userName}}</h3>
+      <span>{{title.caption}}</span>
+      <div class='mt-2'>
+        <time>{{title.date}}</time>
+      </div>
+    </div>
+    <div class='card-body'>
+      {{#with reviewBody}}
+
+        <p>{{seller.title}}: {{seller.value}}</p>
+        <p>{{rating.title}}: {{rating.value}}</p>
+        {{#each text}}
+          <div class='my-3'>
+            <p>{{this}}</p>
+          </div>
+        {{/each}}
+        <p>
+          <b>{{advantages.title}}</b><br />
+          <span>{{advantages.text}}</span>
+        </p>
+        <p>
+          <b>{{disadvantages.title}}</b><br />
+          <span>{{disadvantages.text}}</span>
+        </p>
+
+        <div class='d-flex flex-wrap mt-3'>
+          {{#each images}}
+            <div class='me-3'>
+              <img src={{this}} alt='' />
+            </div>
+          {{/each}}
+        </div>
+
+      {{/with}}
+    </div>
+  </div>
+
+  <div class='ms-5'>
+    {{#each reviewBody.coments}}
+      <div class='card card-body mt-4'>
+        <h3 class='card-title'>{{userName}}</h3>
+        <time>{{date}}</time>
+        <p>{{text}}</p>
+      </div>
+    {{/each}}
+  </div>
+
+</section>
