@@ -1,0 +1,36 @@
+<div class='card card-body my-5'>
+  <div class='row align-items-center'>
+
+    <img class='col-1' src={{image}} alt='' />
+    <div class='col-5'>
+      <h3>{{name}}</h3>
+      <p>{{description}}</p>
+    </div>
+
+    <div class='col-2'>
+
+      <span>{{price.title}}:</span>
+      <br />
+      <strong>{{price.value}}</strong>
+    </div>
+    <span class='col-2'>{{amount}}</span>
+    <div class='col-2'>
+      {{#each buttons}}
+        {{#if isPrimary}}
+          <div class='mb-3'>
+            <button
+              class='btn btn-primary'
+            >{{text}}</button>
+          </div>
+        {{/if}}
+        {{#if isDanger}}
+          <div class='mb-3'>
+            <button
+              class='btn btn-outline-danger'
+            >{{text}}</button>
+          </div>
+        {{/if}}
+      {{/each}}
+    </div>
+  </div>
+</div>
