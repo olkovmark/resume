@@ -41,22 +41,9 @@
 
   <hr class='my-5' />
 
-  <section class='alert text-bg-dark'>
-    {{#with subscribe}}
-      <h2>{{header}}</h2>
-      <div class='d-flex justify-content-between'>
-        <p>{{description}}</p>
-        <a
-          href={{buttons.0.link}}
-          class='btn btn-primary'
-        >{{buttons.0.text}}</a>
-      </div>
-      <a
-        href={{buttons.1.link}}
-        class='btn btn-primary'
-      >{{buttons.1.text}}</a>
-    {{/with}}
-  </section> 
+  
+    {{> shopsubscribe}}
+
 
   <hr class='my-5' />
   

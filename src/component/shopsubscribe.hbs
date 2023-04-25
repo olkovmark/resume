@@ -1,0 +1,18 @@
+<section class='alert text-bg-dark'>
+  {{#with subscribe}}
+    <h2>{{header}}</h2>
+    <p>{{description}}</p>
+    <div class='mb-3'>
+      <a
+        href={{buttons.0.link}}
+        class='btn btn-primary'
+      >{{buttons.0.text}}</a>
+    </div>
+    <div>
+      <a
+        href={{buttons.1.link}}
+        class='btn btn-primary'
+      >{{buttons.1.text}}</a>
+    </div>
+  {{/with}}
+</section>
