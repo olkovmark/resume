@@ -1,0 +1,25 @@
+<div class='row align-items-center'>
+  <div class='col-4'>
+    <span>{{number}}</span>
+    <br />
+    <b>{{status}}</b>
+  </div>
+  <div class='col-2'>
+    <span>{{amount.title}}</span>
+    <br />
+    <b>{{amount.value}}</b>
+  </div>
+  <div class='col-4'>
+    {{#each images}}
+      <img src={{this}} alt='' />
+    {{/each}}
+  </div>
+  <div class='col-2'>
+    <a
+      href={{button.link}}
+      class='btn btn-primary'
+    >{{button.text}}</a>
+  </div>
+
+</div>
+<hr class='my-3' />
